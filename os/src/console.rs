@@ -26,10 +26,7 @@ macro_rules! print {
 #[macro_export]
 macro_rules! println {
   ($fmt:expr, $($arg:tt)*) => ($crate::print!(concat!($fmt, "\n"), $($arg)*));
+  ($fmt:expr) => ($crate::print!(concat!($fmt, "\n")));
 }
 
 
-#[macro_export]
-macro_rules! info {
-  ($fmt:expr, $($arg:tt)*) => ($crate::print!(concat!(  "",$fmt, "\n"), $($arg)*));
-}
