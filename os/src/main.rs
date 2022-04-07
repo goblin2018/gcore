@@ -2,14 +2,28 @@
 #![no_main]
 #![feature(panic_info_message)]
 
+
+#[cfg(feature = "board_k210")]
+#[path ="boards/k210.rs"]
+mod board;
+#[cfg(not(any(feature= "board_k210")))]
+#[path ="boards/qemu.rs"]
+mod board;
+
+
 #[macro_use]
 mod console;
-pub mod batch;
 mod lang_items;
 mod sbi;
 mod sync;
+mod loader;
 pub mod syscall;
 pub mod trap;
+mod config;
+mod timer;
+pub mod task;
+
+
 use core::{arch::global_asm, slice};
 global_asm!(include_str!("entry.asm"));
 global_asm!(include_str!("link_app.S"));

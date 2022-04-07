@@ -3,45 +3,37 @@
   .section .data
   .global _num_app
 _num_app:
-  .quad 5
+  .quad 4
   .quad app_0_start
   .quad app_1_start
   .quad app_2_start
   .quad app_3_start
-  .quad app_4_start
-  .quad app_4_end
+  .quad app_3_end
 
   .section .data
   .global app_0_start
   .global app_0_end
 app_0_start:
-  .incbin "../user/target/riscv64gc-unknown-none-elf/release/0hello_word.bin"
+  .incbin "../user/target/riscv64gc-unknown-none-elf/release/0power_3.bin"
 app_0_end:
 
   .section .data
   .global app_1_start
   .global app_1_end
 app_1_start:
-  .incbin "../user/target/riscv64gc-unknown-none-elf/release/1store_fault.bin"
+  .incbin "../user/target/riscv64gc-unknown-none-elf/release/1power_5.bin"
 app_1_end:
 
   .section .data
   .global app_2_start
   .global app_2_end
 app_2_start:
-  .incbin "../user/target/riscv64gc-unknown-none-elf/release/2power.bin"
+  .incbin "../user/target/riscv64gc-unknown-none-elf/release/2power_7.bin"
 app_2_end:
 
   .section .data
   .global app_3_start
   .global app_3_end
 app_3_start:
-  .incbin "../user/target/riscv64gc-unknown-none-elf/release/3priv_inst.bin"
+  .incbin "../user/target/riscv64gc-unknown-none-elf/release/3sleep.bin"
 app_3_end:
-
-  .section .data
-  .global app_4_start
-  .global app_4_end
-app_4_start:
-  .incbin "../user/target/riscv64gc-unknown-none-elf/release/4priv_csr.bin"
-app_4_end:
