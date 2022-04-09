@@ -20,6 +20,6 @@ pub struct TaskManagerInner {
 }
 lazy_static! {
   pub static ref TASK_MANAGER: TaskManager = {
-    let num_app = get_
+    let num_app = get
   };
 }
