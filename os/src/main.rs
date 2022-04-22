@@ -18,6 +18,7 @@ mod sbi;
 mod sync;
 mod loader;
 pub mod syscall;
+mod mm;
 pub mod trap;
 mod config;
 mod timer;
