@@ -34,9 +34,11 @@ pub fn rust_main() -> ! {
   // color_print();
   println!("[Kernel] hello, world");
   trap::init();
-  batch::init();
-  batch::run_next_app();
-  // panic!("shotdown machine")
+  loader::load_apps();
+  trap::enable_timer_interrupt();
+  timer::set_next_trigger();
+  task::run_first_task();
+  panic!("shotdown machine")
 }
 
 fn clear_bss() {
